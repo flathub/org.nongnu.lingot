@@ -1,6 +1,6 @@
 app-id: org.nongnu.lingot
 runtime: org.freedesktop.Platform
-runtime-version: "23.08"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 
 command: lingot
@@ -18,11 +18,15 @@ modules:
   - shared-modules/intltool/intltool-0.51.json
   - name: json-c
     buildsystem: "cmake-ninja"
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/json-c/json-c/archive/refs/tags/json-c-0.17-20230812.tar.gz
         sha256: 024d302a3aadcbf9f78735320a6d5aedf8b77876c8ac8bbb95081ca55054c7eb
   - name: lingot
+    post-install:
+      - desktop-file-edit --set-icon=$FLATPAK_ID /app/share/applications/org.nongnu.lingot.desktop
     sources:
       - type: archive
         url: https://github.com/ibancg/lingot/releases/download/v1.1.1/lingot-1.1.1.tar.gz
