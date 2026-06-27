@@ -1,6 +1,6 @@
 app-id: org.nongnu.lingot
 runtime: org.freedesktop.Platform
-runtime-version: "25.08"
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 
 command: lingot
@@ -17,14 +17,14 @@ finish-args:
 modules:
   - shared-modules/intltool/intltool-0.51.json
   - name: json-c
-    buildsystem: "cmake-ninja"
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/json-c/json-c.git
-        tag: json-c-0.18-20240915
-        commit: 41a55cfcedb54d9c1874f2f0eb07b504091d7e37
+        tag: json-c-0.19-20260627
+        commit: aa716cd8d663c976b99b0f30f102ee1d8ef63146
         x-checker-data:
           type: git
           tag-pattern: ^json-c-([0-9.]+)-[0-9]+$
@@ -38,6 +38,6 @@ modules:
         commit: 08145337c19d51a8d2463e8ec6a922757a1fd143
         x-checker-data:
           type: git
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
       - type: patch
         path: patches/0001-Add-Developer-content-rating-releases-tags.patch
