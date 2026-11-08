@@ -23,8 +23,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/json-c/json-c.git
-        tag: json-c-0.18-20240915
-        commit: 41a55cfcedb54d9c1874f2f0eb07b504091d7e37
+        tag: json-c-0.19-20260627
+        commit: aa716cd8d663c976b99b0f30f102ee1d8ef63146
         x-checker-data:
           type: git
           tag-pattern: ^json-c-([0-9.]+)-[0-9]+$
